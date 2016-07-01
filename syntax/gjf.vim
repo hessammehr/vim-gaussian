@@ -13,7 +13,7 @@ syn case ignore
 " Keywords
 
 syn keyword ComBlockCmd dft tddft geometry geom end basis opt freq int scf guess scrf
-syn keyword ComTask "#.*$"
+syn keyword ComTask "#[np]?"
 syn keyword ComStartup "\%.*$"
 
 syn region  ComDoubleQuote   start=+"+ skip=+\\"+ end=+"+
@@ -30,9 +30,9 @@ syn match   ComFloat     "\<\d\+\.\d*\%([eE][+-]\=\d\+\)\=[jJ]\=" display
 "==========
 syn cluster     shCommentGroup  contains=shTodo,@Spell
 syn keyword     shTodo          contained                       COMBAK FIXME TODO XXX NOTE
-syn match       shComment                       "^\s*\zs#.*$"   contains=@shCommentGroup
-syn match       shComment                       "\s\zs#.*$"     contains=@shCommentGroup
-syn match       shQuickComment  contained       "#.*$"
+" syn match       shComment                       "^\s*\zs#.*$"   contains=@shCommentGroup
+" syn match       shComment                       "\s\zs#.*$"     contains=@shCommentGroup
+" syn match       shQuickComment  contained       "#.*$"
 
 "Let there be colour
 let b:current_syntax = "gjf"

@@ -12,36 +12,50 @@ syn case ignore
 
 " Keywords
 
-syn keyword ComBlockCmd dft tddft geometry geom end basis opt freq int scf guess scrf
-syn keyword ComTask "#[np]?"
-syn keyword ComStartup "\%.*$"
+syn keyword ComOption geom scf guess scrf symmetry nosymm solvent restart pseudo pop full nbo nbo6 nbo6read read check tcheck allcheck singlets triplets root int grid contained
+syn keyword ComCmd opt fopt popt freq nmr td contained
+syn keyword ComLink0 nprocshared mem chk oldchk rwf lindaworkers usessh save nosave contained
+syn keyword ComBasis sto-3g 3-21g 6-21g 6-31g 6-311g d95v d95 shc cep-4g cep-31g cep-121g lanl2mb lanl2dz sdd sddall cc-pvdz cc-pvtz cc-pvqz cc-pv5z cc-pv6z sv svp tzv tzvp def2sv def2svp def2svpp def2tzv def2tzvp def2tzvpp def2qzv def2qzvp def2qzvpp qzvp midix epr-ii epr-iii ugbs mtsmall contained
+syn keyword ComMethod hf mp2 mp3 mp4 mp5 b2plyp mpw2plyp ci
+" DFT Functionals
+syn keyword ComMethod s xa b pw91 mpw g96 pbe o tpss revtpss brx pkzb wpbeh pbeh vwn vwn5 lyp pl p86 pw91 b95 kcis brc pkzb vp86 v5lyp vsxc hcth m06 m06l b97d b97d3 sogga11 m11l mn12l n12 b3lyp b3p86 b1b95 b1lyp b98 m06hf m062x lc-wpbe cam-b3lyp wb97xd
 
 syn region  ComDoubleQuote   start=+"+ skip=+\\"+ end=+"+
-
+syn region ComStartup start=/%/ end=/[$=]/ contains=ComLink0
+syn match ComRoute /#.*$/ contains=ComBasis,ComCmd,ComOption
 syn match ComAtom    " \a "
 
-syn match ComNumber            "-\=\<\d\+\>#\="
-syn match ComNumber         "\<\d\>" display
-syn match   ComFloat     "\.\d\+\%([eE][+-]\=\d\+\)\=[jJ]\=\>" display
-syn match   ComFloat     "\<\d\+[eE][+-]\=\d\+[jJ]\=\>"  display
-syn match   ComFloat     "\<\d\+\.\d*\%([eE][+-]\=\d\+\)\=[jJ]\=" display
+" Integer with - + or nothing in front
+syn match ComNumber '\d\+'
+syn match ComNumber '[-+]\d\+'
+
+" " Floating point number with decimal no E or e 
+syn match ComNumber '[-+]\d\+\.\d*'
+
+" " Floating point like number with E and no decimal point (+,-)
+syn match ComNumber '[-+]\=\d[[:digit:]]*[eE][\-+]\=\d\+'
+syn match ComNumber '\d[[:digit:]]*[eE][\-+]\=\d\+'
+
+" " Floating point like number with E and decimal point (+,-)
+syn match ComNumber '[-+]\=\d[[:digit:]]*\.\d*[eE][\-+]\=\d\+'
+syn match ComNumber '\d[[:digit:]]*\.\d*[eE][\-+]\=\d\+'
 
 " Comments: {{{1
 "==========
 syn cluster     shCommentGroup  contains=shTodo,@Spell
 syn keyword     shTodo          contained                       COMBAK FIXME TODO XXX NOTE
-" syn match       shComment                       "^\s*\zs#.*$"   contains=@shCommentGroup
-" syn match       shComment                       "\s\zs#.*$"     contains=@shCommentGroup
-" syn match       shQuickComment  contained       "#.*$"
 
 "Let there be colour
 let b:current_syntax = "gjf"
 hi def link shTodo      Todo
-hi def link ComBlockCmd  Statement
-hi def link ComTask      Special
+hi def link ComCmd  Function
+hi def link ComOption keyword
+hi def link ComLink0      Special
 hi def link shDoubleQuote String
 hi def link shComment   Comment
 hi def link shNumber    Number
-hi def link ComAtom      PreProc
-hi def link ComStartup   Comment
-hi def link ComFloat     Float
+hi def link ComAtom      Type
+hi def link ComBasis      Type
+hi def link ComMethod	Type
+hi def link ComStartup   Macro
+hi def link ComRoute	Macro

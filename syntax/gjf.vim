@@ -10,10 +10,18 @@ endif
 "Oh Fortran, always ignoring case...
 syn case ignore
 
+" SCRF options
+syn keyword ComOption scrf solvent contained
+" Guess options
+syn keyword ComOption guess read tcheck contained
+" Geometry options
+syn keyword ComOption geom checkpoint allcheck connectivity nodistance contained
 " Opt, IRC options
-syn keyword ComOption calcfc calcall geom guess scrf symmetry solvent restart pseudo  read checkpoint tcheck allcheck contained
+syn keyword ComOption calcfc calcall symmetry restart pseudo maxpoints contained
 " SCF options
-syn keyword ComOption scf maxcycle conver qc int grid finegrid ultrafine ultrafinegrid superfinegrid coarsegrid contained
+syn keyword ComOption scf maxcycle conver qc contained
+" Integral and CPHF options
+syn keyword ComOption int integral cphf grid fine finegrid ultrafine ultrafinegrid superfine superfinegrid coarse coarsegrid sg1 sg1grid contained
 " Population analysis options
 syn keyword ComOption pop full nbo nbo6 nbo6read contained
 " Other options

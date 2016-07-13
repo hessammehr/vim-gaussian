@@ -31,7 +31,7 @@ syn keyword ComOption singlets triplets root contained
 
 syn keyword ComCmd irc opt fopt popt freq nmr td contained
 syn keyword ComLink0 nprocshared mem chk oldchk rwf lindaworkers usessh save nosave contained
-syn keyword ComBasis sto-3g 3-21g 6-21g 6-31g 6-311g d95v d95 shc cep-4g cep-31g cep-121g lanl2mb lanl2dz sdd sddall cc-pvdz cc-pvtz cc-pvqz cc-pv5z cc-pv6z sv svp tzv tzvp def2sv def2svp def2svpp def2tzv def2tzvp def2tzvpp def2qzv def2qzvp def2qzvpp qzvp midix epr-ii epr-iii ugbs mtsmall contained
+syn keyword ComBasis sto-3g 3-21g 6-21g 6-31g 6-311g d95v d95 shc cep-4g cep-31g cep-121g lanl2mb lanl2dz sdd sddall cc-pvdz cc-pvtz cc-pvqz cc-pv5z cc-pv6z sv svp tzv tzvp def2sv def2svp def2svpp def2tzv def2tzvp def2tzvpp def2qzv def2qzvp def2qzvpp qzvp midix epr-ii epr-iii ugbs mtsmall w06 fit notfit auto contained
 syn keyword ComMethod hf mp2 mp3 mp4 mp5 b2plyp mpw2plyp ci
 " DFT Functionals
 syn keyword ComMethod s xa b pw91 mpw g96 pbe o tpss revtpss brx pkzb wpbeh pbeh vwn vwn5 lyp pl p86 pw91 b95 kcis brc pkzb vp86 v5lyp vsxc hcth m06 m06l b97d b97d3 sogga11 m11l mn12l n12 b3lyp b3p86 b1b95 b1lyp b98 m06hf m062x lc-wpbe cam-b3lyp wb97xd contained

@@ -1,3 +1,4 @@
+![screenshot](screenshot.png)
 # Vim syntax highlighting for ab initio computational chemistry
 This vim plugin provides syntax highlighting for `.com` and `.gjf` Gaussian input files.
 Pull requests welcome.

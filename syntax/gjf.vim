@@ -17,7 +17,7 @@ syn keyword ComOption guess read tcheck contained
 " Geometry options
 syn keyword ComOption geom checkpoint allcheck connectivity nodistance contained
 " Opt, IRC options
-syn keyword ComOption calcfc calcall symmetry restart pseudo maxpoints contained
+syn keyword ComOption readopt calcfc readfc rcfc calcall symmetry restart pseudo maxpoints recalc stepsize contained
 syn keyword ComOption z-matrix modredundant redundant cartesian gediis rfo ef  contained
 " SCF options
 syn keyword ComOption scf maxcycle conver qc contained
